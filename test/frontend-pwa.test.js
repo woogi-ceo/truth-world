@@ -10,7 +10,7 @@ test("HTML advertises mobile app and PWA metadata", async () => {
   assert.match(html, /apple-mobile-web-app-capable/);
   assert.match(html, /apple-touch-icon/);
   assert.match(html, /meta name="theme-color"/);
-  assert.match(html, /href="\/styles\.css\?v=responsive-polish-2"/);
+  assert.match(html, /href="\/styles\.css\?v=responsive-polish-3"/);
   assert.match(html, /src="\/app\.js\?v=pwa-1"/);
   assert.match(html, /aria-current="page"/);
 });
@@ -33,7 +33,7 @@ test("web app manifest is installable and section-aware", async () => {
 test("service worker caches app shell but not public API responses", async () => {
   const sw = await readFile(new URL("../public/sw.js", import.meta.url), "utf8");
 
-  assert.match(sw, /truth-world-shell-v5/);
+  assert.match(sw, /truth-world-shell-v6/);
   assert.match(sw, /\/offline\.html/);
   assert.match(sw, /url\.pathname\.startsWith\("\/api\/"\)/);
   assert.match(sw, /event\.respondWith\(fetch\(request\)\)/);
@@ -50,15 +50,22 @@ test("browser registers the service worker as progressive enhancement", async ()
   assert.match(app, /aria-current/);
 });
 
-test("tablet layout keeps compact desktop rails until the phone breakpoint", async () => {
+test("responsive layout separates compact desktop, tablet rail, and phone tabs", async () => {
   const css = await readFile(new URL("../public/styles.css", import.meta.url), "utf8");
-  const tabletBlock = css.match(/@media \(max-width: 1180px\) \{([\s\S]*?)@media \(max-width: 620px\)/)?.[1] || "";
+  const compactDesktopBlock = css.match(/@media \(max-width: 1180px\) \{([\s\S]*?)@media \(max-width: 960px\)/)?.[1] || "";
+  const tabletRailBlock = css.match(/@media \(max-width: 960px\) \{([\s\S]*?)@media \(max-width: 620px\)/)?.[1] || "";
   const phoneBlock = css.match(/@media \(max-width: 620px\) \{([\s\S]*?)@media \(max-width: 620px\)/)?.[1] || "";
 
-  assert.match(tabletBlock, /grid-template-columns: 76px minmax\(0, 1fr\) clamp\(260px, 30vw, 340px\);/);
-  assert.match(tabletBlock, /\.wordmark-mark\s*\{[\s\S]*display: block;/);
-  assert.doesNotMatch(tabletBlock, /\.nav-list\s*\{[\s\S]*position: fixed;/);
-  assert.doesNotMatch(css, /@media \(max-width: 960px\)/);
+  assert.match(compactDesktopBlock, /grid-template-columns: clamp\(176px, 18vw, 220px\) minmax\(0, 1fr\) clamp\(276px, 29vw, 340px\);/);
+  assert.match(compactDesktopBlock, /\.wordmark-lockup\s*\{[\s\S]*display: block;/);
+  assert.match(compactDesktopBlock, /\.nav-link \.nav-label\s*\{[\s\S]*display: block;/);
+  assert.doesNotMatch(compactDesktopBlock, /\.nav-list\s*\{[\s\S]*position: fixed;/);
+
+  assert.match(tabletRailBlock, /grid-template-columns: 76px minmax\(0, 1fr\) clamp\(260px, 30vw, 340px\);/);
+  assert.match(tabletRailBlock, /\.wordmark-mark\s*\{[\s\S]*display: block;/);
+  assert.match(tabletRailBlock, /\.nav-link \.nav-label\s*\{[\s\S]*display: none;/);
+  assert.match(tabletRailBlock, /\.search-box\s*\{[\s\S]*display: none;/);
+  assert.doesNotMatch(tabletRailBlock, /\.nav-list\s*\{[\s\S]*position: fixed;/);
 
   assert.match(phoneBlock, /\.social-shell\s*\{[\s\S]*display: block;/);
   assert.match(phoneBlock, /\.left-sidebar\s*\{[\s\S]*height: 0;/);

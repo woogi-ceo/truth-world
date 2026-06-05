@@ -1,9 +1,9 @@
-const CACHE_VERSION = "truth-world-shell-v5";
+const CACHE_VERSION = "truth-world-shell-v6";
 const SHELL_ASSETS = [
   "/",
   "/index.html",
   "/offline.html",
-  "/styles.css?v=responsive-polish-2",
+  "/styles.css?v=responsive-polish-3",
   "/app.js?v=pwa-1",
   "/manifest.webmanifest",
   "/assets/truth-world-logo.svg",
