@@ -1,0 +1,22 @@
+{
+  "name": "truth-world",
+  "version": "0.1.0",
+  "description": "Static-first multilingual Truth Social summary reader with a secure Grok API proxy.",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "start": "node server.js",
+    "test": "node --test"
+  },
+  "keywords": [
+    "truth-world",
+    "grok",
+    "translation",
+    "summarization",
+    "public-interest-news"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  }
+}

@@ -1,0 +1,9 @@
+<svg width="480" height="270" viewBox="0 0 480 270" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Policy link preview">
+  <rect width="480" height="270" fill="#f4f6ff"/>
+  <rect x="54" y="46" width="168" height="176" rx="10" fill="#ffffff" stroke="#d8ddec"/>
+  <rect x="250" y="54" width="126" height="154" rx="6" fill="#e9efff"/>
+  <path d="M84 92h108M84 120h92M84 148h116M84 176h72" stroke="#4e46e8" stroke-width="12" stroke-linecap="round"/>
+  <circle cx="354" cy="82" r="36" fill="#ff3f77"/>
+  <path d="M270 170h116" stroke="#192033" stroke-width="16" stroke-linecap="round"/>
+  <path d="M270 198h76" stroke="#697386" stroke-width="10" stroke-linecap="round"/>
+</svg>

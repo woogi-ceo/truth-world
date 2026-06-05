@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Truth World</title>
+    <link rel="icon" href="/assets/truth-world-mark.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <div class="social-shell">
+      <aside class="left-sidebar" aria-label="Primary navigation">
+        <div class="sidebar-primary">
+          <a class="wordmark" href="/" aria-label="Truth World home">
+            <img class="wordmark-lockup" src="/assets/truth-world-logo.svg" alt="">
+            <img class="wordmark-mark" src="/assets/truth-world-mark.svg" alt="">
+          </a>
+
+          <label class="search-box">
+            <span class="search-icon" aria-hidden="true">⌕</span>
+            <input type="search" placeholder="Search">
+          </label>
+
+          <nav class="nav-list">
+            <button type="button" class="nav-link nav-section active" data-section="truth">
+              <span class="nav-icon" aria-hidden="true">T</span>
+              <span class="nav-label" data-i18n="nav.truth">Truth</span>
+            </button>
+            <button type="button" class="nav-link nav-section" data-section="topics">
+              <span class="nav-icon" aria-hidden="true">#</span>
+              <span class="nav-label" data-i18n="nav.topics">Topics</span>
+            </button>
+            <button type="button" class="nav-link nav-section" data-section="news">
+              <span class="nav-icon" aria-hidden="true">N</span>
+              <span class="nav-label" data-i18n="nav.news">News</span>
+            </button>
+          </nav>
+        </div>
+
+        <div class="sidebar-secondary">
+          <button type="button" class="sidebar-compose" aria-label="Sign up or log in">
+            <span aria-hidden="true">↪</span>
+            <span data-i18n="action.signUpLogin">Sign up / Log in</span>
+          </button>
+          <div class="sidebar-policy" aria-label="Access policy">
+            <p><span data-i18n="policy.read">Read without sign-in.</span><br><span data-i18n="policy.write">Sign in only to write.</span></p>
+            <span aria-hidden="true">i</span>
+          </div>
+        </div>
+      </aside>
+
+      <main class="timeline-column" aria-labelledby="timeline-heading">
+        <header class="home-header">
+          <div class="header-title-block">
+            <a class="mobile-header-brand" href="/" aria-label="Truth World home">
+              <img class="mobile-header-logo" src="/assets/truth-world-logo.svg" alt="">
+            </a>
+            <div class="header-copy">
+              <h1 id="timeline-heading">Truth</h1>
+              <p id="country-brief" class="header-brief">Hourly source-linked updates for Korean readers.</p>
+            </div>
+          </div>
+          <section class="brief-controls" aria-label="Region and language settings">
+            <label class="language-control">
+              <span data-i18n="control.region">Region</span>
+              <select id="country-select">
+                <optgroup label="World">
+                  <option value="WORLD" selected>Global</option>
+                </optgroup>
+                <optgroup label="Regions">
+                  <option value="APAC">Asia-Pacific</option>
+                  <option value="NA">North America</option>
+                  <option value="EU">Europe</option>
+                  <option value="LATAM">Latin America</option>
+                  <option value="MENA">Middle East</option>
+                  <option value="AFRICA">Africa</option>
+                </optgroup>
+                <optgroup label="Countries">
+                  <option value="KR">대한민국</option>
+                  <option value="JP">Japan</option>
+                  <option value="US">United States</option>
+                  <option value="GB">United Kingdom</option>
+                  <option value="DE">Germany</option>
+                  <option value="FR">France</option>
+                  <option value="IN">India</option>
+                  <option value="BR">Brazil</option>
+                  <option value="MX">Mexico</option>
+                  <option value="CA">Canada</option>
+                  <option value="AU">Australia</option>
+                  <option value="SG">Singapore</option>
+                  <option value="SA">Saudi Arabia</option>
+                  <option value="AE">United Arab Emirates</option>
+                  <option value="ZA">South Africa</option>
+                </optgroup>
+              </select>
+            </label>
+            <label class="language-control">
+              <span data-i18n="control.language">Language</span>
+              <select id="language-select">
+                <option value="en">English</option>
+                <option value="ko" selected>Korean</option>
+                <option value="es">Spanish</option>
+                <option value="ja">Japanese</option>
+                <option value="ar">Arabic</option>
+                <option value="fr">French</option>
+                <option value="zh">Chinese</option>
+                <option value="hi">Hindi</option>
+                <option value="pt">Portuguese</option>
+                <option value="de">German</option>
+                <option value="it">Italian</option>
+                <option value="ru">Russian</option>
+                <option value="id">Indonesian</option>
+                <option value="vi">Vietnamese</option>
+                <option value="tr">Turkish</option>
+              </select>
+            </label>
+          </section>
+        </header>
+
+        <section class="composer country-dashboard" aria-label="Country briefing dashboard">
+          <div class="avatar app-avatar">TW</div>
+          <div class="composer-main">
+            <div class="dashboard-topline">
+              <div id="visibility-pill" class="visibility-pill">Global reader mode</div>
+              <span id="update-clock">Hourly updates</span>
+            </div>
+            <p id="country-headline">영향력 있는 Truth Social 발언 중 한국에 영향을 줄 수 있는 정보를 시간별로 정리합니다.</p>
+            <div class="dashboard-stats">
+              <span><strong id="watchlist-count">98</strong> <span data-i18n="stat.defaultSources">default sources</span></span>
+              <span><strong id="visible-count">0</strong> <span data-i18n="stat.countryAlerts">country alerts</span></span>
+              <span><strong id="critical-count">0</strong> <span data-i18n="stat.critical">critical</span></span>
+            </div>
+          </div>
+        </section>
+
+        <nav id="section-filters" class="section-filters" aria-label="Section filters"></nav>
+
+        <section id="feed-list" class="feed-list" aria-live="polite"></section>
+      </main>
+
+      <aside id="ai-panel" class="right-sidebar" aria-label="AI and source controls">
+        <section class="tool-card chat-card" aria-labelledby="chat-heading">
+          <div class="chat-title-row">
+            <div>
+              <h2 id="chat-heading" data-i18n="copilot.title">Truth World Copilot</h2>
+              <p class="online-status"><span aria-hidden="true"></span><em data-i18n="status.online">Online</em></p>
+            </div>
+            <span class="sparkle" aria-hidden="true">✦</span>
+          </div>
+          <p id="translation-status" class="translation-status" aria-live="polite"></p>
+          <p id="provider-status" class="provider-status" aria-live="polite"></p>
+          <div id="chat-log" class="chat-log" aria-live="polite"></div>
+          <div id="chat-suggestions" class="chat-suggestions" aria-label="Suggested questions"></div>
+          <form id="chat-form" class="chat-form">
+            <input id="chat-input" type="text" autocomplete="off" placeholder="Ask anything about Korea...">
+            <button type="submit" aria-label="Ask AI">↑</button>
+          </form>
+          <p class="ai-disclaimer" data-i18n="disclaimer.ai">AI answers are for reference only. Please verify important information.</p>
+        </section>
+      </aside>
+    </div>
+
+    <div id="mobile-ai-backdrop" class="mobile-ai-backdrop" hidden></div>
+    <div id="auth-modal" class="auth-modal" hidden>
+      <div class="auth-backdrop" data-auth-close></div>
+      <section class="auth-sheet" role="dialog" aria-modal="true" aria-labelledby="auth-title">
+        <div class="auth-header">
+          <div>
+            <h2 id="auth-title">Sign up / Log in</h2>
+            <p id="auth-subtitle">Create a reader account to write and save briefs.</p>
+          </div>
+          <button type="button" class="auth-close" aria-label="Close" data-auth-close>×</button>
+        </div>
+        <div id="auth-account" class="auth-account" hidden>
+          <p id="auth-account-copy"></p>
+          <button id="auth-logout" type="button" class="auth-submit">Log out</button>
+        </div>
+        <div id="auth-tabs" class="auth-tabs" role="tablist" aria-label="Authentication mode">
+          <button type="button" data-auth-mode="signup">Sign up</button>
+          <button type="button" data-auth-mode="login">Log in</button>
+        </div>
+        <form id="auth-form" class="auth-form">
+          <label id="auth-name-field">
+            <span id="auth-display-label">Display name</span>
+            <input id="auth-display-name" type="text" autocomplete="name" maxlength="60">
+          </label>
+          <label>
+            <span id="auth-email-label">Email</span>
+            <input id="auth-email" type="email" autocomplete="email" required>
+          </label>
+          <label>
+            <span id="auth-password-label">Password</span>
+            <input id="auth-password" type="password" autocomplete="current-password" minlength="8" required>
+          </label>
+          <div id="auth-phone-fields" class="auth-phone-fields">
+            <label>
+              <span id="auth-country-label">Country code</span>
+              <input id="auth-country-code" type="text" inputmode="latin" autocomplete="country" maxlength="2" placeholder="KR">
+            </label>
+            <label>
+              <span id="auth-phone-label">Phone number</span>
+              <input id="auth-phone-number" type="tel" autocomplete="tel" placeholder="+821012345678">
+            </label>
+          </div>
+          <p id="auth-hint" class="auth-hint">Use at least 8 characters.</p>
+          <p id="auth-message" class="auth-message" aria-live="polite"></p>
+          <button id="auth-submit" type="submit" class="auth-submit">Create account</button>
+        </form>
+        <div id="auth-verification" class="auth-verification" hidden>
+          <p id="auth-verification-status"></p>
+          <div class="auth-verification-actions">
+            <button id="auth-start-phone" type="button">Send code</button>
+            <input id="auth-phone-code" type="text" inputmode="numeric" maxlength="8" placeholder="000000">
+            <button id="auth-check-phone" type="button">Verify</button>
+          </div>
+        </div>
+      </section>
+    </div>
+    <div class="mobile-action-dock" aria-label="Mobile quick actions">
+      <button id="mobile-auth-button" type="button" class="mobile-fab plus" aria-label="Sign up or log in">+</button>
+      <button id="mobile-ai-toggle" type="button" class="mobile-fab ai" aria-controls="ai-panel" aria-expanded="false" aria-label="Toggle AI">AI</button>
+    </div>
+
+    <footer class="mobile-footer">
+      <span data-i18n="footer.access">Read without sign-in. Sign in only to write.</span>
+      <span id="watchlist-policy">No crawler. Approved source integration pending.</span>
+    </footer>
+
+    <script src="/app.js" type="module"></script>
+  </body>
+</html>

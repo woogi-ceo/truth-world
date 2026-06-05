@@ -1,0 +1,435 @@
+{
+  "countryProfiles": {
+    "WORLD": {
+      "label": "Global",
+      "citizenLabel": "Global reader",
+      "brief": "Tracks approved-source Truth signals across regions, then lets each reader narrow by region, country, and language."
+    },
+    "APAC": {
+      "label": "Asia-Pacific",
+      "citizenLabel": "Asia-Pacific reader",
+      "brief": "Tracks U.S. policy, security, technology, and trade signals affecting Asia-Pacific countries."
+    },
+    "NA": {
+      "label": "North America",
+      "citizenLabel": "North American reader",
+      "brief": "Tracks domestic and cross-border policy signals across the United States, Canada, and Mexico."
+    },
+    "EU": {
+      "label": "Europe",
+      "citizenLabel": "European reader",
+      "brief": "Tracks security, energy, technology, and election signals affecting European readers."
+    },
+    "LATAM": {
+      "label": "Latin America",
+      "citizenLabel": "Latin American reader",
+      "brief": "Tracks trade, energy, migration, and diplomatic signals affecting Latin America."
+    },
+    "MENA": {
+      "label": "Middle East",
+      "citizenLabel": "Middle East reader",
+      "brief": "Tracks security, energy, and diplomacy signals affecting the Middle East."
+    },
+    "AFRICA": {
+      "label": "Africa",
+      "citizenLabel": "African reader",
+      "brief": "Tracks trade, energy, security, and development signals affecting African readers."
+    },
+    "KR": {
+      "label": "대한민국",
+      "citizenLabel": "대한민국 국민",
+      "brief": "미국 정치, 안보, 기술, 산업 발언이 한국 외교·경제·안보에 주는 영향을 시간별로 정리합니다.",
+      "language": "ko"
+    },
+    "GB": {
+      "label": "United Kingdom",
+      "citizenLabel": "U.K. reader",
+      "brief": "Tracks U.S. and global policy signals that may affect the United Kingdom.",
+      "language": "en"
+    },
+    "DE": {
+      "label": "Germany",
+      "citizenLabel": "German reader",
+      "brief": "Tracks security, energy, trade, and technology signals affecting Germany.",
+      "language": "de"
+    },
+    "FR": {
+      "label": "France",
+      "citizenLabel": "French reader",
+      "brief": "Tracks diplomatic, security, and economic signals affecting France.",
+      "language": "fr"
+    },
+    "IN": {
+      "label": "India",
+      "citizenLabel": "Indian reader",
+      "brief": "Tracks technology, trade, and geopolitical signals affecting India.",
+      "language": "hi"
+    },
+    "BR": {
+      "label": "Brazil",
+      "citizenLabel": "Brazilian reader",
+      "brief": "Tracks trade, energy, and diplomacy signals affecting Brazil.",
+      "language": "pt"
+    },
+    "MX": {
+      "label": "Mexico",
+      "citizenLabel": "Mexican reader",
+      "brief": "Tracks border, trade, manufacturing, and diplomacy signals affecting Mexico.",
+      "language": "es"
+    },
+    "CA": {
+      "label": "Canada",
+      "citizenLabel": "Canadian reader",
+      "brief": "Tracks North American policy, trade, and security signals affecting Canada.",
+      "language": "en"
+    },
+    "AU": {
+      "label": "Australia",
+      "citizenLabel": "Australian reader",
+      "brief": "Tracks Indo-Pacific security, trade, and technology signals affecting Australia.",
+      "language": "en"
+    },
+    "SG": {
+      "label": "Singapore",
+      "citizenLabel": "Singapore reader",
+      "brief": "Tracks technology, finance, trade, and Indo-Pacific policy signals affecting Singapore.",
+      "language": "en"
+    },
+    "SA": {
+      "label": "Saudi Arabia",
+      "citizenLabel": "Saudi reader",
+      "brief": "Tracks energy, security, and diplomacy signals affecting Saudi Arabia.",
+      "language": "ar"
+    },
+    "AE": {
+      "label": "United Arab Emirates",
+      "citizenLabel": "UAE reader",
+      "brief": "Tracks energy, finance, technology, and diplomacy signals affecting the UAE.",
+      "language": "ar"
+    },
+    "ZA": {
+      "label": "South Africa",
+      "citizenLabel": "South African reader",
+      "brief": "Tracks trade, energy, security, and global policy signals affecting South Africa.",
+      "language": "en"
+    },
+    "JP": {
+      "label": "Japan",
+      "citizenLabel": "Japanese reader",
+      "brief": "Tracks U.S. policy and technology posts that may affect Japan.",
+      "language": "ja"
+    },
+    "US": {
+      "label": "United States",
+      "citizenLabel": "U.S. reader",
+      "brief": "Tracks domestic policy, economy, and security updates from approved source feeds.",
+      "language": "en"
+    }
+  },
+  "watchlist": {
+    "id": "default_watchlist_98",
+    "label": "Default 98-source influence watchlist",
+    "count": 98,
+    "status": "Partner API required",
+    "cadence": "Hourly",
+    "policy": "No crawler. Accounts are loaded only through approved Truth Social partner access.",
+    "sourceGroups": [
+      "U.S. administration and campaign accounts",
+      "national security and foreign policy voices",
+      "major U.S. policy media accounts",
+      "technology and space industry leaders",
+      "economy, trade, and energy commentators"
+    ]
+  },
+  "accessModel": {
+    "read": "Guest access",
+    "write": "Sign-in required",
+    "writeScopes": [
+      "create topic posts",
+      "submit source annotations",
+      "publish community notes",
+      "save paid or private subscriptions"
+    ]
+  },
+  "topics": [
+    {
+      "id": "topic-korea-security",
+      "tag": "#KoreaSecurity",
+      "title": "한미일 안보 협력 실시간 이슈",
+      "category": "Security",
+      "image": "/assets/preview-space.svg",
+      "description": "미사일 경보, 동북아 억지력, 우주 기반 통신 발언을 모아 토론하는 커뮤니티 토픽입니다.",
+      "countryCodes": ["KR", "JP"],
+      "activity": "2.4k posts today",
+      "heat": "Hot",
+      "sourceMix": "Truth watchlist + community hashtags",
+      "guestVisible": true,
+      "writePolicy": "Sign-in required to post"
+    },
+    {
+      "id": "topic-korea-battery",
+      "tag": "#BatterySupplyChain",
+      "title": "배터리·전기차 공급망",
+      "category": "Economy",
+      "image": "/assets/preview-manufacturing.svg",
+      "description": "미국 산업정책, 보조금, 광물 조달, 한국 기업 영향 정보를 공유하는 토픽입니다.",
+      "countryCodes": ["KR", "US", "JP"],
+      "activity": "980 posts today",
+      "heat": "Rising",
+      "sourceMix": "Truth watchlist + public topic posts",
+      "guestVisible": true,
+      "writePolicy": "Sign-in required to post"
+    },
+    {
+      "id": "topic-truth-media",
+      "tag": "#TruthMediaWatch",
+      "title": "정치 미디어 신호와 여론",
+      "category": "Politics",
+      "image": "/assets/preview-policy.svg",
+      "description": "영향력 있는 정치 미디어 계정이 만든 실시간 이슈를 해시태그 중심으로 추적합니다.",
+      "countryCodes": ["KR", "US"],
+      "activity": "1.1k posts today",
+      "heat": "Live",
+      "sourceMix": "Community hashtags",
+      "guestVisible": true,
+      "writePolicy": "Sign-in required to post"
+    }
+  ],
+  "newsBundles": [
+    {
+      "id": "news-global-daily",
+      "title": "Global Truth Brief",
+      "countryCode": "WORLD",
+      "cadence": "Hourly",
+      "category": "Daily",
+      "image": "/assets/preview-policy.svg",
+      "description": "Truth 피드의 영향력 있는 발언과 주요 Topics를 전세계 관점으로 묶은 기본 브리프입니다.",
+      "includes": ["Truth watchlist", "Global topics", "Regional impact"],
+      "subscription": "Guest preview available",
+      "signupRequired": "Only to save subscription or write"
+    },
+    {
+      "id": "news-apac-security",
+      "title": "Asia-Pacific Security Watch",
+      "countryCode": "APAC",
+      "cadence": "Hourly",
+      "category": "Security",
+      "image": "/assets/preview-space.svg",
+      "description": "동북아, 인도태평양, 우주/미사일 경보와 관련된 안보 신호를 지역 관점으로 묶습니다.",
+      "includes": ["Critical Truth posts", "#KoreaSecurity", "Indo-Pacific"],
+      "subscription": "Guest preview available",
+      "signupRequired": "Only to save subscription or write"
+    },
+    {
+      "id": "news-na-policy",
+      "title": "North America Policy Watch",
+      "countryCode": "NA",
+      "cadence": "Hourly",
+      "category": "Daily",
+      "image": "/assets/preview-policy.svg",
+      "description": "미국, 캐나다, 멕시코의 정책·무역·산업 신호를 북미 관점으로 묶습니다.",
+      "includes": ["Truth watchlist", "Trade", "Domestic policy"],
+      "subscription": "Guest preview available",
+      "signupRequired": "Only to save subscription or write"
+    },
+    {
+      "id": "news-eu-security-energy",
+      "title": "Europe Security & Energy Brief",
+      "countryCode": "EU",
+      "cadence": "Hourly",
+      "category": "Security",
+      "image": "/assets/preview-manufacturing.svg",
+      "description": "유럽 안보, 에너지, 산업정책 이슈를 지역 관점으로 선별합니다.",
+      "includes": ["Security", "Energy", "Industrial policy"],
+      "subscription": "Guest preview available",
+      "signupRequired": "Only to save subscription or write"
+    },
+    {
+      "id": "news-kr-daily",
+      "title": "대한민국 데일리 Truth Brief",
+      "countryCode": "KR",
+      "cadence": "Hourly",
+      "category": "Daily",
+      "image": "/assets/preview-policy.svg",
+      "description": "Truth 피드의 공신력 있는 발언과 Topics의 실시간 이슈를 한국 관점으로 묶은 기본 구독 템플릿입니다.",
+      "includes": ["Truth watchlist", "#KoreaSecurity", "#BatterySupplyChain"],
+      "subscription": "Guest preview available",
+      "signupRequired": "Only to save subscription or write"
+    },
+    {
+      "id": "news-kr-security",
+      "title": "대한민국 안보·외교 속보",
+      "countryCode": "KR",
+      "cadence": "Hourly",
+      "category": "Security",
+      "image": "/assets/preview-space.svg",
+      "description": "동북아 안보, 한미일 협력, 우주/미사일 경보 관련 Truth와 Topics를 우선 묶습니다.",
+      "includes": ["Critical Truth posts", "#KoreaSecurity"],
+      "subscription": "Guest preview available",
+      "signupRequired": "Only to save subscription or write"
+    },
+    {
+      "id": "news-kr-battery",
+      "title": "Battery & EV Policy Watch",
+      "countryCode": "KR",
+      "cadence": "Hourly",
+      "category": "Economy",
+      "image": "/assets/preview-manufacturing.svg",
+      "description": "배터리·전기차 산업 정책과 글로벌 공급망 동향을 한국 기업 관점으로 선별해 제공합니다.",
+      "includes": ["Truth watchlist", "#BatterySupplyChain", "Industrial policy"],
+      "subscription": "Guest preview available",
+      "signupRequired": "Only to save subscription or write"
+    },
+    {
+      "id": "news-jp-daily",
+      "title": "Japan Northeast Asia Brief",
+      "countryCode": "JP",
+      "cadence": "Hourly",
+      "category": "Daily",
+      "image": "/assets/preview-space.svg",
+      "description": "U.S. policy and security posts relevant to Japan, bundled from Truth and Topics.",
+      "includes": ["Truth watchlist", "#KoreaSecurity"],
+      "subscription": "Guest preview available",
+      "signupRequired": "Only to save subscription or write"
+    }
+  ],
+  "posts": [
+    {
+      "id": "kr-hour-0900",
+      "title": "Korea impact brief: trade funding signal",
+      "author": "@watchlist_policy",
+      "publishedAt": "2026-06-04 09:00",
+      "hourSlot": "09:00",
+      "countryCodes": ["KR"],
+      "impactLevel": "High",
+      "sourceTier": "Influence watchlist",
+      "sourceStatus": "Demo fixture",
+      "sourceUrl": "https://truthsocial.com/",
+      "linkPreview": {
+        "domain": "truthworld.local",
+        "title": "Trade and funding signal for Korea watchers",
+        "description": "Synthetic source card showing how Truth World would preserve original context while summarizing national impact.",
+        "image": "/assets/preview-policy.svg"
+      },
+      "sourceText": "Demo source text: A U.S. policy figure says a new trade and infrastructure funding package could prioritize allied manufacturing, logistics corridors, and technology screening. This fixture is synthetic and is not a real Truth Social post.",
+      "countryImpact": {
+        "WORLD": "동맹국 제조업, 물류, 기술 심사에 걸친 글로벌 산업정책 신호입니다.",
+        "KR": "한국 기업의 미국 내 제조 투자, 공급망 심사, 대미 로비 이슈와 연결될 수 있는 고영향 정책 신호입니다."
+      },
+      "verificationStatus": "Not independently verified",
+      "tags": ["Korea-impact", "trade", "funding"],
+      "ai": {
+        "ko": {
+          "summary": "미국 정책 인사가 동맹국 제조업, 물류, 기술 심사를 우선할 수 있는 무역·인프라 패키지를 언급했다.",
+          "translation": "데모 원문: 한 미국 정책 인사는 새 무역·인프라 예산 패키지가 동맹국 제조업, 물류 통로, 기술 심사를 우선할 수 있다고 말했다. 이 데이터는 합성 예시이며 실제 Truth Social 게시물이 아니다.",
+          "claims": [
+            "새 무역·인프라 예산 패키지가 논의된다고 말한다.",
+            "동맹국 제조업과 물류가 우선순위가 될 수 있다고 말한다.",
+            "기술 심사 강화 가능성을 언급한다."
+          ]
+        },
+        "ja": {
+          "summary": "米国の政策関係者が、同盟国の製造業、物流、技術審査を優先する可能性のある貿易・インフラ政策に言及している。",
+          "translation": "デモ原文: 米国の政策関係者は、新しい貿易・インフラ資金パッケージが同盟国の製造業、物流回廊、技術審査を優先する可能性があると述べている。",
+          "claims": [
+            "新しい貿易・インフラ資金パッケージが議論されていると述べている。",
+            "同盟国の製造業と物流が優先される可能性があると述べている。",
+            "技術審査強化の可能性に触れている。"
+          ]
+        }
+      }
+    },
+    {
+      "id": "kr-hour-1000",
+      "title": "Korea impact brief: peninsula security language",
+      "author": "@watchlist_security",
+      "publishedAt": "2026-06-04 10:00",
+      "hourSlot": "10:00",
+      "countryCodes": ["KR", "JP"],
+      "impactLevel": "Critical",
+      "sourceTier": "Influence watchlist",
+      "sourceStatus": "Demo fixture",
+      "sourceUrl": "https://truthsocial.com/",
+      "linkPreview": {
+        "domain": "truthworld.local",
+        "title": "Security language affecting Northeast Asia",
+        "description": "Hourly source card for national-security language that may affect Korea and Japan.",
+        "image": "/assets/preview-space.svg"
+      },
+      "sourceText": "Demo source text: A national security voice says allied deterrence in Northeast Asia should include faster missile warning, space-based communications, and closer trilateral coordination. This fixture is synthetic and is not a real Truth Social post.",
+      "countryImpact": {
+        "WORLD": "동북아 억지력, 미사일 경보, 우주 기반 통신을 둘러싼 글로벌 안보 신호입니다.",
+        "KR": "한미일 안보 협력, 미사일 경보, 위성통신 인프라 논의에 직접 연결될 수 있는 안보성 발언입니다.",
+        "JP": "Trilateral security coordination and missile warning language may affect Japan's defense posture."
+      },
+      "verificationStatus": "Not independently verified",
+      "tags": ["Korea-impact", "security", "Northeast-Asia"],
+      "ai": {
+        "ko": {
+          "summary": "미국 안보 발언자가 동북아 억지력에 미사일 경보, 우주 기반 통신, 한미일 공조가 필요하다고 말했다.",
+          "translation": "데모 원문: 한 국가안보 발언자는 동북아 동맹 억지력에 더 빠른 미사일 경보, 우주 기반 통신, 더 긴밀한 3자 협력이 포함되어야 한다고 말했다. 이 데이터는 합성 예시이며 실제 Truth Social 게시물이 아니다.",
+          "claims": [
+            "동북아 억지력 강화를 주장한다.",
+            "미사일 경보와 우주 기반 통신을 언급한다.",
+            "한미일 3자 협력 강화를 주장한다."
+          ]
+        },
+        "ja": {
+          "summary": "米国の安全保障関係者が、北東アジアの抑止力にミサイル警戒、宇宙通信、日米韓連携が必要だと述べている。",
+          "translation": "デモ原文: 安全保障関係者は、北東アジアの同盟抑止力にはより速いミサイル警戒、宇宙ベース通信、より緊密な三国連携が必要だと述べている。",
+          "claims": [
+            "北東アジアの抑止力強化を主張している。",
+            "ミサイル警戒と宇宙通信に触れている。",
+            "三国連携強化を主張している。"
+          ]
+        }
+      }
+    },
+    {
+      "id": "kr-hour-1100",
+      "title": "Korea impact brief: EV and battery supply chain",
+      "author": "@watchlist_business",
+      "publishedAt": "2026-06-04 11:00",
+      "hourSlot": "11:00",
+      "countryCodes": ["KR", "US"],
+      "impactLevel": "Medium",
+      "sourceTier": "Influence watchlist",
+      "sourceStatus": "Demo fixture",
+      "sourceUrl": "https://truthsocial.com/",
+      "linkPreview": {
+        "domain": "truthworld.local",
+        "title": "EV and battery supply-chain signal",
+        "description": "Synthetic article preview for U.S. industrial-policy posts relevant to Korean battery makers.",
+        "image": "/assets/preview-manufacturing.svg"
+      },
+      "sourceText": "Demo source text: A business and technology commentator says U.S. battery supply-chain rules may reward local production, faster permitting, and verified mineral sourcing. This fixture is synthetic and is not a real Truth Social post.",
+      "countryImpact": {
+        "WORLD": "전기차·배터리 공급망, 광물 조달, 현지 생산 인센티브에 관한 글로벌 산업정책 신호입니다.",
+        "KR": "한국 배터리·전기차 기업의 미국 생산, 원재료 조달, 보조금 조건에 영향을 줄 수 있는 산업정책 신호입니다.",
+        "US": "Industrial-policy language may affect domestic battery production and permitting."
+      },
+      "verificationStatus": "Not independently verified",
+      "tags": ["Korea-impact", "battery", "EV"],
+      "ai": {
+        "ko": {
+          "summary": "미국 배터리 공급망 규칙이 현지 생산, 인허가 속도, 검증된 광물 조달을 중시할 수 있다는 발언이다.",
+          "translation": "데모 원문: 한 비즈니스·기술 논평자는 미국 배터리 공급망 규칙이 현지 생산, 더 빠른 인허가, 검증된 광물 조달에 보상을 줄 수 있다고 말했다. 이 데이터는 합성 예시이며 실제 Truth Social 게시물이 아니다.",
+          "claims": [
+            "미국 배터리 공급망 규칙 변화 가능성을 말한다.",
+            "현지 생산과 빠른 인허가를 언급한다.",
+            "검증된 광물 조달이 중요해질 수 있다고 말한다."
+          ]
+        },
+        "ja": {
+          "summary": "米国の電池サプライチェーン規則が、現地生産、許認可の迅速化、検証済み鉱物調達を重視する可能性があるという発言である。",
+          "translation": "デモ原文: ビジネス・技術コメンテーターは、米国の電池サプライチェーン規則が現地生産、より迅速な許認可、検証済み鉱物調達を評価する可能性があると述べている。",
+          "claims": [
+            "米国の電池サプライチェーン規則変更の可能性を述べている。",
+            "現地生産と迅速な許認可に言及している。",
+            "検証済み鉱物調達が重要になる可能性を述べている。"
+          ]
+        }
+      }
+    }
+  ]
+}

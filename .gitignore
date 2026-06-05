@@ -1,0 +1,35 @@
+# Local dependencies and package-manager output
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Runtime configuration and secrets
+.env
+.env.*
+!.env.example
+
+# Local auth/session state. Production must configure an external
+# TRUTH_WORLD_AUTH_STORE path outside the repository.
+data/auth-store*.json
+data/*.tmp
+
+# Local orchestration/runtime state
+.omx/
+.codex/
+
+# OS/editor noise
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Local visual QA artifacts
+*.png
+*.jpg
+*.jpeg
+*.webp
+*.gif
+*.mov
+*.mp4
