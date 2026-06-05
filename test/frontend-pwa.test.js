@@ -10,7 +10,7 @@ test("HTML advertises mobile app and PWA metadata", async () => {
   assert.match(html, /apple-mobile-web-app-capable/);
   assert.match(html, /apple-touch-icon/);
   assert.match(html, /meta name="theme-color"/);
-  assert.match(html, /href="\/styles\.css\?v=mobile-polish-2"/);
+  assert.match(html, /href="\/styles\.css\?v=responsive-polish-2"/);
   assert.match(html, /src="\/app\.js\?v=pwa-1"/);
   assert.match(html, /aria-current="page"/);
 });
@@ -33,7 +33,7 @@ test("web app manifest is installable and section-aware", async () => {
 test("service worker caches app shell but not public API responses", async () => {
   const sw = await readFile(new URL("../public/sw.js", import.meta.url), "utf8");
 
-  assert.match(sw, /truth-world-shell-v3/);
+  assert.match(sw, /truth-world-shell-v5/);
   assert.match(sw, /\/offline\.html/);
   assert.match(sw, /url\.pathname\.startsWith\("\/api\/"\)/);
   assert.match(sw, /event\.respondWith\(fetch\(request\)\)/);
@@ -50,17 +50,23 @@ test("browser registers the service worker as progressive enhancement", async ()
   assert.match(app, /aria-current/);
 });
 
-test("mobile layout keeps the sidebar as a bottom app nav through portrait tablet widths", async () => {
+test("tablet layout keeps compact desktop rails until the phone breakpoint", async () => {
   const css = await readFile(new URL("../public/styles.css", import.meta.url), "utf8");
-  const mobileBlock = css.match(/@media \(max-width: 960px\) \{([\s\S]*?)@media \(max-width: 620px\)/)?.[1] || "";
+  const tabletBlock = css.match(/@media \(max-width: 1180px\) \{([\s\S]*?)@media \(max-width: 620px\)/)?.[1] || "";
+  const phoneBlock = css.match(/@media \(max-width: 620px\) \{([\s\S]*?)@media \(max-width: 620px\)/)?.[1] || "";
 
-  assert.match(mobileBlock, /\.social-shell\s*\{[\s\S]*display: block;/);
-  assert.match(mobileBlock, /\.left-sidebar\s*\{[\s\S]*height: 0;/);
-  assert.match(mobileBlock, /\.sidebar-secondary\s*\{[\s\S]*display: none;/);
-  assert.match(mobileBlock, /\.wordmark,\s*[\s\S]*\.sidebar-policy\s*\{[\s\S]*display: none;/);
-  assert.match(mobileBlock, /\.nav-list\s*\{[\s\S]*position: fixed;/);
-  assert.match(mobileBlock, /\.mobile-action-dock\s*\{[\s\S]*position: fixed;/);
-  assert.match(mobileBlock, /\.brief-controls \.language-control span\s*\{[\s\S]*clip-path: inset\(50%\);/);
+  assert.match(tabletBlock, /grid-template-columns: 76px minmax\(0, 1fr\) clamp\(260px, 30vw, 340px\);/);
+  assert.match(tabletBlock, /\.wordmark-mark\s*\{[\s\S]*display: block;/);
+  assert.doesNotMatch(tabletBlock, /\.nav-list\s*\{[\s\S]*position: fixed;/);
+  assert.doesNotMatch(css, /@media \(max-width: 960px\)/);
+
+  assert.match(phoneBlock, /\.social-shell\s*\{[\s\S]*display: block;/);
+  assert.match(phoneBlock, /\.left-sidebar\s*\{[\s\S]*height: 0;/);
+  assert.match(phoneBlock, /\.sidebar-secondary\s*\{[\s\S]*display: none;/);
+  assert.match(phoneBlock, /\.wordmark,\s*[\s\S]*\.sidebar-policy\s*\{[\s\S]*display: none;/);
+  assert.match(phoneBlock, /\.nav-list\s*\{[\s\S]*position: fixed;/);
+  assert.match(phoneBlock, /\.mobile-action-dock\s*\{[\s\S]*position: fixed;/);
+  assert.match(phoneBlock, /\.brief-controls \.language-control span\s*\{[\s\S]*clip-path: inset\(50%\);/);
 });
 
 test("server serves web app manifest with manifest content type", async () => {

@@ -1880,7 +1880,7 @@ textarea {
 
 @media (max-width: 1180px) {
   .social-shell {
-    grid-template-columns: 88px minmax(520px, 1fr) 340px;
+    grid-template-columns: 76px minmax(0, 1fr) clamp(260px, 30vw, 340px);
   }
 
   .left-sidebar {
@@ -1930,119 +1930,7 @@ textarea {
   }
 }
 
-@media (max-width: 960px) {
-  .social-shell {
-    grid-template-columns: 1fr;
-  }
-
-  .left-sidebar,
-  .right-sidebar {
-    position: static;
-    height: auto;
-    overflow: visible;
-    border: 0;
-  }
-
-  .left-sidebar {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    gap: 12px;
-    border-bottom: 1px solid var(--line);
-    padding: 14px;
-  }
-
-  .sidebar-primary {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) auto;
-    align-items: center;
-    gap: 12px;
-  }
-
-  .wordmark {
-    width: auto;
-    min-height: 60px;
-    overflow: visible;
-    justify-content: flex-start;
-  }
-
-  .wordmark-lockup {
-    display: block;
-    width: 190px;
-    max-width: min(68vw, 210px);
-    flex-basis: 190px;
-  }
-
-  .wordmark-mark {
-    display: none;
-  }
-
-  .search-box {
-    display: none;
-  }
-
-  .nav-list {
-    display: flex;
-    gap: 6px;
-    margin: 0;
-  }
-
-  .nav-link {
-    display: grid;
-    min-height: 36px;
-    grid-template-columns: 1fr;
-    padding: 0 12px;
-    font-size: 0.86rem;
-    width: auto;
-  }
-
-  .nav-link .nav-icon {
-    display: none;
-  }
-
-  .nav-link .nav-label {
-    display: inline;
-  }
-
-  .nav-link.active::before {
-    display: none;
-  }
-
-  .home-header {
-    grid-template-columns: minmax(0, 1fr) auto;
-    min-height: auto;
-    padding: 14px;
-  }
-
-  .brief-controls {
-    grid-column: 1 / -1;
-    order: 3;
-    overflow-x: auto;
-  }
-
-  .home-header {
-    top: 0;
-  }
-
-  .chat-card {
-    position: static;
-    height: auto;
-    min-height: auto;
-  }
-
-  .right-sidebar {
-    padding: 14px;
-  }
-
-  .chat-card {
-    gap: 16px;
-  }
-
-  .chat-log {
-    max-height: none;
-  }
-}
-
-@media (max-width: 960px) {
+@media (max-width: 620px) {
   body {
     padding-bottom: calc(82px + env(safe-area-inset-bottom));
   }
