@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#ffffff">
+    <title>Truth World Offline</title>
+    <link rel="icon" href="/assets/truth-world-mark.svg" type="image/svg+xml">
+    <style>
+      :root {
+        --ink: #10101d;
+        --muted: #6f6a82;
+        --line: #e6e3ed;
+        --purple: #5547f5;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        min-height: 100vh;
+        min-height: 100dvh;
+        display: grid;
+        place-items: center;
+        margin: 0;
+        padding: 24px;
+        background: #fff;
+        color: var(--ink);
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      }
+
+      main {
+        width: min(420px, 100%);
+        display: grid;
+        gap: 18px;
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        padding: 22px;
+      }
+
+      img {
+        width: 190px;
+        max-width: 72vw;
+        height: auto;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: 1.35rem;
+        line-height: 1.15;
+      }
+
+      p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.48;
+      }
+
+      a {
+        width: fit-content;
+        border-radius: 999px;
+        padding: 12px 18px;
+        background: var(--purple);
+        color: #fff;
+        font-weight: 900;
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <img src="/assets/truth-world-logo.svg" alt="Truth World">
+      <h1>Truth World is offline</h1>
+      <p>The app shell is available, but live feed, translation, and account checks need a network connection.</p>
+      <a href="/">Try again</a>
+    </main>
+  </body>
+</html>

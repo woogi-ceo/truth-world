@@ -25,6 +25,11 @@ npm start
 
 Open `http://127.0.0.1:4173`.
 
+The frontend includes PWA metadata and a service worker so the web app can serve
+as the first mobile-app foundation. The service worker caches only the static app
+shell; `/api/*` responses are intentionally network-only to avoid stale public
+interest information.
+
 End users never provide API keys. They use Truth World through the web app. Truth World operators configure approved provider credentials only on the server.
 
 For local/operator setup, manual Grok analysis uses xAI when configured:
@@ -177,6 +182,7 @@ npm test
 - [Provider contracts](docs/PROVIDER_CONTRACTS.md)
 - [Security model](docs/SECURITY_MODEL.md)
 - [Operator guide](docs/OPERATOR_GUIDE.md)
+- [Mobile app readiness](docs/MOBILE_APP_READINESS.md)
 - [GitHub release checklist](docs/GITHUB_RELEASE_CHECKLIST.md)
 
 ## Official references

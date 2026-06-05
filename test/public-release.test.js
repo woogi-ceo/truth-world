@@ -71,6 +71,7 @@ test("GitHub release documents and templates are present", async () => {
     "docs/SECURITY_MODEL.md",
     "docs/PROVIDER_CONTRACTS.md",
     "docs/OPERATOR_GUIDE.md",
+    "docs/MOBILE_APP_READINESS.md",
     "docs/GITHUB_RELEASE_CHECKLIST.md",
     "docs/PUBLIC_READINESS_REVIEW.md",
     ".github/PULL_REQUEST_TEMPLATE.md",

@@ -2,10 +2,24 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="description" content="Truth World is a multilingual public-interest reader with source-linked AI summaries, transparent translation, and no crawler-based ingestion.">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="color-scheme" content="light">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Truth World">
+    <meta property="og:title" content="Truth World">
+    <meta property="og:description" content="A multilingual public-interest reader with source-linked AI summaries and secure provider boundaries.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="/assets/truth-world-logo.svg">
+    <meta name="twitter:card" content="summary">
     <title>Truth World</title>
+    <link rel="manifest" href="/manifest.webmanifest">
     <link rel="icon" href="/assets/truth-world-mark.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="/styles.css">
+    <link rel="apple-touch-icon" href="/assets/truth-world-touch-icon.svg">
+    <link rel="stylesheet" href="/styles.css?v=mobile-polish-1">
   </head>
   <body>
     <div class="social-shell">
@@ -22,15 +36,15 @@
           </label>
 
           <nav class="nav-list">
-            <button type="button" class="nav-link nav-section active" data-section="truth">
+            <button type="button" class="nav-link nav-section active" data-section="truth" aria-current="page">
               <span class="nav-icon" aria-hidden="true">T</span>
               <span class="nav-label" data-i18n="nav.truth">Truth</span>
             </button>
-            <button type="button" class="nav-link nav-section" data-section="topics">
+            <button type="button" class="nav-link nav-section" data-section="topics" aria-current="false">
               <span class="nav-icon" aria-hidden="true">#</span>
               <span class="nav-label" data-i18n="nav.topics">Topics</span>
             </button>
-            <button type="button" class="nav-link nav-section" data-section="news">
+            <button type="button" class="nav-link nav-section" data-section="news" aria-current="false">
               <span class="nav-icon" aria-hidden="true">N</span>
               <span class="nav-label" data-i18n="nav.news">News</span>
             </button>
@@ -226,6 +240,6 @@
       <span id="watchlist-policy">No crawler. Approved source integration pending.</span>
     </footer>
 
-    <script src="/app.js" type="module"></script>
+    <script src="/app.js?v=pwa-1" type="module"></script>
   </body>
 </html>

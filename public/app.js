@@ -436,6 +436,13 @@ const sectionConfig = {
   }
 };
 
+const validSections = new Set(Object.keys(sectionConfig));
+
+function sectionFromUrl() {
+  const section = new URLSearchParams(window.location.search).get("section") || "truth";
+  return validSections.has(section) ? section : "truth";
+}
+
 const state = {
   countryProfiles: {},
   posts: [],
@@ -449,7 +456,7 @@ const state = {
   newsDetailId: null,
   country: "WORLD",
   language: "ko",
-  activeSection: "truth",
+  activeSection: sectionFromUrl(),
   filters: {
     truth: "all",
     topics: "all",
@@ -1201,6 +1208,14 @@ function renderDashboard() {
   }
 }
 
+function renderSectionNavigation() {
+  els.navSections.forEach((item) => {
+    const active = item.dataset.section === state.activeSection;
+    item.classList.toggle("active", active);
+    item.setAttribute("aria-current", active ? "page" : "false");
+  });
+}
+
 function renderFilters() {
   const config = sectionConfig[state.activeSection] || sectionConfig.truth;
   els.sectionFilters.innerHTML = "";
@@ -1300,6 +1315,7 @@ function setMobileAiOpen(open, { focusInput = false } = {}) {
 }
 
 function renderScreen({ resetChat = false } = {}) {
+  renderSectionNavigation();
   renderDashboard();
   renderFilters();
   renderFeed();
@@ -1790,9 +1806,13 @@ function setMessage(message, tone = "") {
 }
 
 function setActiveSection(section) {
+  if (!validSections.has(section)) return;
   state.activeSection = section;
   if (section !== "news") state.newsDetailId = null;
-  els.navSections.forEach((item) => item.classList.toggle("active", item.dataset.section === section));
+  const nextUrl = new URL(window.location.href);
+  if (section === "truth") nextUrl.searchParams.delete("section");
+  else nextUrl.searchParams.set("section", section);
+  window.history.pushState({ section }, "", nextUrl);
   renderScreen({ resetChat: true });
   scheduleTranslationRefresh();
 }
@@ -1946,7 +1966,24 @@ window.addEventListener("pageshow", (event) => {
   if (event.persisted) setMobileAiOpen(false);
 });
 
+window.addEventListener("popstate", () => {
+  const section = sectionFromUrl();
+  if (section === state.activeSection) return;
+  state.activeSection = section;
+  if (section !== "news") state.newsDetailId = null;
+  renderScreen({ resetChat: true });
+  scheduleTranslationRefresh();
+});
+
 setMobileAiOpen(false);
+
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("/sw.js").catch(() => {
+      // Registration is a progressive enhancement; the app remains usable.
+    });
+  });
+}
 
 Promise.all([loadPosts(), loadAuthSession()])
   .then(() => {

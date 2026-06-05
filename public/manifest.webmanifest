@@ -1,0 +1,59 @@
+{
+  "name": "Truth World",
+  "short_name": "Truth World",
+  "description": "A multilingual public-interest reader with source-linked AI summaries and secure provider boundaries.",
+  "id": "/",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "display_override": ["window-controls-overlay", "standalone", "browser"],
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
+  "orientation": "portrait-primary",
+  "categories": ["news", "productivity", "utilities"],
+  "lang": "en",
+  "dir": "ltr",
+  "icons": [
+    {
+      "src": "/assets/truth-world-mark.svg",
+      "sizes": "96x96",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/truth-world-touch-icon.svg",
+      "sizes": "180x180",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/assets/truth-world-logo.svg",
+      "sizes": "420x150",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Truth",
+      "short_name": "Truth",
+      "description": "Open the approved-source Truth feed.",
+      "url": "/?section=truth",
+      "icons": [{ "src": "/assets/truth-world-mark.svg", "sizes": "96x96", "type": "image/svg+xml" }]
+    },
+    {
+      "name": "Topics",
+      "short_name": "Topics",
+      "description": "Open public-interest topic rooms.",
+      "url": "/?section=topics",
+      "icons": [{ "src": "/assets/truth-world-mark.svg", "sizes": "96x96", "type": "image/svg+xml" }]
+    },
+    {
+      "name": "News",
+      "short_name": "News",
+      "description": "Open region-aware brief templates.",
+      "url": "/?section=news",
+      "icons": [{ "src": "/assets/truth-world-mark.svg", "sizes": "96x96", "type": "image/svg+xml" }]
+    }
+  ]
+}
